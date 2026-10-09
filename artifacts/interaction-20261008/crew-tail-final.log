@@ -1,0 +1,24 @@
+PASS visible sailors, independent uniforms, captain collision and external mechanisms
+PASS guard mast 1: real ascent, persistent station and return
+PASS guard mast 3: real ascent, persistent station and return
+PASS bowsprit work and cancellation midway up a real rope ladder
+PASS three simultaneous orders queue safely, work completes and all sailors return
+{
+  "engine": "Rapier 0.21.0",
+  "sailors": [
+    {
+      "id": "crew-0",
+      "distanceWalked": 140.14
+    },
+    {
+      "id": "crew-1",
+      "distanceWalked": 60.21
+    },
+    {
+      "id": "crew-2",
+      "distanceWalked": 144.63
+    }
+  ],
+  "maxStep": 0.06949,
+  "events": 27
+}

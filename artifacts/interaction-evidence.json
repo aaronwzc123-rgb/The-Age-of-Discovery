@@ -1,0 +1,17 @@
+{
+  "version":1,
+  "runId":"crew-20261008-visual-3",
+  "captures":[
+    {"mode":"desktop","state":"body","report":"artifacts/crew-20261008-visual-3/desktop-body.json"},
+    {"mode":"desktop","state":"climbing","report":"artifacts/crew-20261008-visual-3/desktop-climbing.json"},
+    {"mode":"desktop","state":"crew","report":"artifacts/crew-20261008-visual-3/desktop-crew.json"},
+    {"mode":"desktop","state":"captain","report":"artifacts/crew-20261008-visual-3/desktop-captain.json"},
+    {"mode":"mobile","state":"welcome","report":"artifacts/crew-20261008-visual-3/mobile-welcome.json"},
+    {"mode":"mobile","state":"crew","report":"artifacts/crew-20261008-visual-3/mobile-crew.json"},
+    {"mode":"mobile","state":"inventory","report":"artifacts/crew-20261008-visual-3/mobile-inventory.json"},
+    {"mode":"mobile","state":"body","report":"artifacts/crew-20261008-visual-3/mobile-body.json"}
+  ],
+  "artifacts":["水手与船长命令系统规划.md","artifacts/interaction-20261008/crew-motion.json","artifacts/interaction-20261008/body-contact-check.json","artifacts/interaction-20261008/input-check.json","artifacts/interaction-20261008/crew-ui-check.json","artifacts/interaction-20261008/physics-check.json","artifacts/interaction-20261008/crew-anchor-final.log","artifacts/interaction-20261008/crew-tail-final.log","artifacts/interaction-20261008/final-report.md","artifacts/interaction-20261008/crew-rope-motion-0.png","artifacts/interaction-20261008/crew-rope-motion-5.png"]
+}
+
+

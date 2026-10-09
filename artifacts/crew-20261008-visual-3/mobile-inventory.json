@@ -1,0 +1,421 @@
+{
+  "url": "http://127.0.0.1:5173/?qa=1",
+  "mode": "mobile",
+  "state": "inventory",
+  "requestedState": "inventory",
+  "appliedState": "inventory",
+  "runId": "crew-20261008-visual-3",
+  "seed": null,
+  "screenshotPath": "artifacts/crew-20261008-visual-3/mobile-inventory.png",
+  "gpu": {
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 (0x00002882) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "vendor": "Google Inc. (NVIDIA)",
+    "softwareRendered": false
+  },
+  "result": {
+    "ok": true,
+    "reason": "nonblank",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "height": 664
+    },
+    "drawingBuffer": {
+      "width": 585,
+      "height": 996
+    },
+    "alphaPixels": 4111,
+    "variance": 229,
+    "colorBuckets": 71,
+    "metrics": {
+      "colorBuckets": 124,
+      "colorEntropyBits": 2.62,
+      "edgeDensity": 0.204,
+      "luminance": {
+        "mean": 46.5,
+        "p5": 30.1,
+        "p95": 77.5,
+        "contrast": 47.4
+      },
+      "dominantColorShare": 0.372,
+      "nonBackgroundShare": 0.628
+    },
+    "renderBudget": {
+      "tier": "mobile",
+      "note": "starting-point budget; adjust per game and document overrides",
+      "rows": [
+        {
+          "metric": "calls",
+          "actual": 273,
+          "limit": 150,
+          "ok": false
+        },
+        {
+          "metric": "triangles",
+          "actual": 707281,
+          "limit": 300000,
+          "ok": false
+        },
+        {
+          "metric": "geometries",
+          "actual": 495,
+          "limit": 200,
+          "ok": false
+        },
+        {
+          "metric": "textures",
+          "actual": 15,
+          "limit": 40,
+          "ok": true
+        }
+      ],
+      "withinBudget": false
+    },
+    "diagnostics": {
+      "renderer": {
+        "calls": 273,
+        "triangles": 707281,
+        "geometries": 495,
+        "textures": 15,
+        "render": {
+          "frame": 43,
+          "calls": 273,
+          "triangles": 707281,
+          "points": 150,
+          "lines": 0
+        },
+        "memory": {
+          "geometries": 495,
+          "textures": 15
+        }
+      },
+      "state": {
+        "mode": "deck",
+        "player": {
+          "x": 0.6,
+          "z": 0.35,
+          "y": 2.399015764001119
+        },
+        "localPlayer": {
+          "x": 0.6,
+          "z": 0.35,
+          "y": 2.399015764001119,
+          "vy": 0,
+          "yaw": -1.5707963267948966,
+          "grounded": false,
+          "crouched": false
+        },
+        "world": {
+          "hatchOpen": false,
+          "cargoOpen": false,
+          "room": "lower",
+          "lamps": {},
+          "cabinDoorOpen": false,
+          "boatRopesReleased": false,
+          "capstanBraked": false,
+          "sailsSet": [
+            false,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "hasTelescope": false,
+          "scopeRaised": false,
+          "cabinDoorAngle": 0,
+          "hatchAngle": 0,
+          "cargoOffset": 0,
+          "cellDoorAngles": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "mechanismBlocked": null,
+          "portableLanternOn": true
+        },
+        "boat": {
+          "deployed": false,
+          "lowering": 0,
+          "lowerTarget": false,
+          "x": -11,
+          "z": -4.6,
+          "heading": 0,
+          "speed": 0
+        },
+        "climb": null,
+        "lookYaw": -1.5707963267948966,
+        "lookPitch": 0,
+        "selectedActionId": null,
+        "choices": [],
+        "ship": {
+          "x": 0,
+          "z": 0,
+          "heading": 0,
+          "speed": 0,
+          "throttle": 0,
+          "anchorLift": 0,
+          "anchorTarget": 0,
+          "rudder": 0
+        },
+        "voyage": {
+          "cabin": false,
+          "chart": false,
+          "anchor": false,
+          "sailed": false,
+          "moored": false,
+          "distance": 0
+        },
+        "frameTimeMs": 24.8,
+        "cameraHeading": 0,
+        "camera": [
+          0.6,
+          3.8290157640011193,
+          0.35
+        ],
+        "controls": [
+          -4,
+          5,
+          2
+        ],
+        "gait": 0,
+        "gaitAmount": 0,
+        "pirateYaw": -1.5707963267948966,
+        "pointerLocked": false,
+        "paused": true,
+        "target": null,
+        "inventory": {
+          "slots": [
+            {
+              "type": "chart",
+              "count": 1
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "selected": 0,
+          "stowed": true,
+          "cursor": null,
+          "source": null,
+          "containers": {
+            "captain": [
+              {
+                "type": "lantern",
+                "count": 1
+              },
+              {
+                "type": "rope",
+                "count": 3
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "hold": [
+              {
+                "type": "rope",
+                "count": 6
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          },
+          "drops": [],
+          "nextDrop": 1,
+          "lanternOn": true
+        },
+        "totals": {
+          "chart": 1,
+          "lantern": 1,
+          "rope": 9,
+          "telescope": 1
+        },
+        "body": {
+          "pose": "idle",
+          "contacts": {},
+          "unreachable": [],
+          "maxContactError": 0,
+          "maxSupportError": 0,
+          "nearWall": false,
+          "equipped": null
+        }
+      },
+      "physics": {
+        "engine": "Rapier 0.21.0",
+        "solver": "capsule sweep and slide",
+        "colliders": 675,
+        "bodies": 3,
+        "fixedDt": 0.016666666666666666,
+        "radius": 0.27,
+        "ccdBodies": 0,
+        "stepMs": 0
+      },
+      "crew": [
+        {
+          "id": "crew-0",
+          "name": "林恩",
+          "status": "rest",
+          "label": "舱内休息",
+          "task": null,
+          "position": [
+            -4.86,
+            0.15,
+            0.35
+          ],
+          "worldPosition": [
+            -4.86,
+            0.15,
+            0.35
+          ],
+          "yaw": 0,
+          "climb": null,
+          "distanceWalked": 0,
+          "blockedReason": ""
+        },
+        {
+          "id": "crew-1",
+          "name": "阿洛",
+          "status": "rest",
+          "label": "舱内休息",
+          "task": null,
+          "position": [
+            -3.04,
+            0.15,
+            0.35
+          ],
+          "worldPosition": [
+            -3.04,
+            0.15,
+            0.35
+          ],
+          "yaw": 0,
+          "climb": null,
+          "distanceWalked": 0,
+          "blockedReason": ""
+        },
+        {
+          "id": "crew-2",
+          "name": "米娅",
+          "status": "rest",
+          "label": "舱内休息",
+          "task": null,
+          "position": [
+            -1.84,
+            0.15,
+            0.35
+          ],
+          "worldPosition": [
+            -1.84,
+            0.15,
+            0.35
+          ],
+          "yaw": 0,
+          "climb": null,
+          "distanceWalked": 0,
+          "blockedReason": ""
+        }
+      ],
+      "crewBodies": [
+        {
+          "id": "crew-0",
+          "pose": "idle",
+          "contacts": {},
+          "unreachable": [],
+          "maxContactError": 0,
+          "maxSupportError": 0,
+          "nearWall": false,
+          "equipped": null
+        },
+        {
+          "id": "crew-1",
+          "pose": "idle",
+          "contacts": {},
+          "unreachable": [],
+          "maxContactError": 0,
+          "maxSupportError": 0,
+          "nearWall": false,
+          "equipped": null
+        },
+        {
+          "id": "crew-2",
+          "pose": "idle",
+          "contacts": {},
+          "unreachable": [],
+          "maxContactError": 0,
+          "maxSupportError": 0,
+          "nearWall": false,
+          "equipped": null
+        }
+      ],
+      "quality": {
+        "dpr": 1.5,
+        "postPasses": 0,
+        "shadowMap": 1024,
+        "shadowLights": 1
+      }
+    }
+  },
+  "consoleErrors": [],
+  "pageErrors": [],
+  "consoleErrorCount": 0,
+  "pageErrorCount": 0
+}

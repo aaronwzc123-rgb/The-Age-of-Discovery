@@ -1,0 +1,21 @@
+node_modules/
+.server.pid
+.env
+.env.*
+!.env.example
+*.log
+*.pem
+*.key
+.DS_Store
+Thumbs.db
+
+# Keep the latest delivery evidence; older captures, backups and GLB stay local.
+/artifacts/*
+!/artifacts/interaction-evidence.json
+!/artifacts/interaction-20261008/
+!/artifacts/crew-20261008-visual-3/
+!/artifacts/verification-scripts/
+/artifacts/interaction-20261008/*failure.png
+!/artifacts/interaction-20261008/crew-anchor-final.log
+!/artifacts/interaction-20261008/crew-tail-final.log
+!/artifacts/interaction-20261008/crew-check.log

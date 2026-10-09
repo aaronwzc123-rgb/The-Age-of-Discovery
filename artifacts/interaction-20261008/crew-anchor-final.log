@@ -1,0 +1,23 @@
+PASS visible sailors, independent uniforms, captain collision and external mechanisms
+PASS windlass grip: 130 real contacts, 122 retractions, maximum error 0.00000m
+PASS anchor: actual lower cabin, hatch climb, deck walk, heave and return
+PASS obstruction waits and resumes; anchor recall stops heaving immediately
+{
+  "engine": "Rapier 0.21.0",
+  "sailors": [
+    {
+      "id": "crew-0",
+      "distanceWalked": 113.27
+    },
+    {
+      "id": "crew-1",
+      "distanceWalked": 0.01
+    },
+    {
+      "id": "crew-2",
+      "distanceWalked": 0.01
+    }
+  ],
+  "maxStep": 0.08568,
+  "events": 12
+}

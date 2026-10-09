@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "checks": [
+    "all 15 ship targets can be clicked in the initial desktop view",
+    "busy sailor rejection is visible inside the modal",
+    "recalling one lookout preserves the other sailor anchor order",
+    "closing panel aborts speech and ignores a late result",
+    "speech command parser accepts sail 11 and rejects sail 12",
+    "desktop and narrow mouse hotbar do not overlap navigation"
+  ],
+  "errors": []
+}

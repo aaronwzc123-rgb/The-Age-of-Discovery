@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "checks": [
+    "real Start click obtains pointer lock",
+    "mouse movement changes view without holding a button",
+    "start empty handed; X stows the selected chart",
+    "inventory pauses, releases and resumes mouse control",
+    "map opens and resumes",
+    "crosshair left click opens door; normal keys enter and leave captain cabin",
+    "crouch and crosshair open physical hatch",
+    "lower cabin pull ring closes and reopens the shared hatch",
+    "both aft stairs walk up across the repaired top and back down",
+    "crosshair wheel grip, rudder input and release",
+    "manual windlass stops when the rotating bar leaves real hand reach",
+    "ship-model anchor order resumes play; command panel freezes NPCs",
+    "sailor physically climbs out, walks to windlass, raises anchor and returns below",
+    "specified sailor climbs toward selected lookout and recall returns continuously",
+    "narrow touch layout stays inside dialog and can issue sail 11",
+    "no browser runtime errors"
+  ],
+  "errors": []
+}

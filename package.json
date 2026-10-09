@@ -1,0 +1,13 @@
+{
+  "name": "anchored-pirate-ship",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node check.mjs"
+  },
+  "dependencies": {
+    "three": "0.180.0",
+    "@dimforge/rapier3d-compat": "0.21.0"
+  }
+}

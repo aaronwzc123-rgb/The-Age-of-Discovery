@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#132b32" />
+    <title>黑潮号 · 船长的海盗之旅</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="importmap">
+      { "imports": { "three": "./node_modules/three/build/three.module.js", "three/addons/": "./node_modules/three/examples/jsm/" } }
+    </script>
+  </head>
+  <body>
+    <main id="scene" aria-label="单人海盗探索游戏"></main>
+    <header class="identity">
+      <div class="eyebrow"><span></span> 船长与水手 · 自由航行</div>
+      <h1>黑潮号<span>THE BLACK TIDE</span></h1>
+      <p id="location">黑潮号 · 甲板</p>
+    </header>
+    <aside class="voyage" aria-label="船长日志">
+      <div class="voyage-meta"><span>船长日志</span><strong id="voyage-count">0 / 5</strong></div>
+      <h2 id="voyage-title">先熟悉你的船</h2>
+      <p id="voyage-hint">瞄准舱盖拉环，左键打开，再抓住梯子。</p>
+      <progress id="voyage-progress" max="5" value="0" aria-label="初航进度"></progress>
+    </aside>
+    <div class="loading" id="loading" role="status">正在驶入这片海域…</div>
+    <dialog id="welcome" aria-labelledby="welcome-title">
+      <div class="welcome-content">
+        <small>THE BLACK TIDE</small>
+        <h2 id="welcome-title">船长的海盗之旅</h2>
+        <p>你的船，你的航线。<br>黑潮号已在出生岛旁抛锚，三名水手正在舱内休息。</p>
+        <button id="start-button">开始游戏 <span aria-hidden="true">→</span></button><button id="newgame-button" hidden>开始新航程</button>
+        <div class="welcome-controls">鼠标观察 · 左键操作 · E 背包 · M 海图 · B 船务</div>
+      </div>
+    </dialog>
+    <aside class="telemetry" aria-label="航行状态">
+      <div class="compass"><div class="compass-face" aria-hidden="true"><span id="compass-needle"></span></div><span id="heading">090°</span><small>航向</small></div>
+      <div class="readings"><span id="anchor-state">船锚已放下</span><progress id="anchor-progress" max="1" value="0" aria-label="船锚收起进度"></progress><div class="instruments"><span id="speed">0.0 节</span><span id="rudder-value">舵角 0°</span></div><span class="crew">船长 1 · 水手 3</span></div>
+    </aside>
+    <div id="toast" role="status"></div>
+    <button id="action" class="interaction" hidden><kbd>左键</kbd><span><strong id="action-name"></strong><small id="action-hint"></small></span></button>
+    <div id="crosshair" aria-hidden="true"><i></i><i></i></div><div id="target-label" role="status"></div><div id="hotbar" aria-label="快捷物品栏"></div><div id="equip-label"></div><div id="mouse-resume" hidden><h2>点击继续航行</h2><p id="mouse-message">鼠标控制视角 · 左键操作 · Esc 暂停</p><button id="mouse-resume-button">继续游戏</button><button id="compat-button" hidden>使用兼容控制</button></div>
+    <footer>
+      <div class="movement">
+        <div class="direction-pad" aria-label="移动控制"><button data-move="KeyW" aria-label="向前移动">↑</button><div><button data-move="KeyA" aria-label="向左移动">←</button><button data-move="KeyS" aria-label="向后移动">↓</button><button data-move="KeyD" aria-label="向右移动">→</button></div></div>
+        <div class="instructions"><p id="mode-hint">WASD 移动 · 左键互动 · E 背包 · M 海图</p><small>鼠标转头 · 滚轮换物 · Ctrl 奔跑 · Shift 潜行</small></div>
+      </div>
+      <nav aria-label="游戏控制"><button id="jump-button">跳跃 <kbd>␣</kbd></button><button id="map-button">航海图 <kbd>M</kbd></button><button id="inventory-button">背包 <kbd>E</kbd></button><button id="crew-button">船务 <kbd>B</kbd></button><button id="recenter-button" aria-label="相机归位">归位 <kbd>C</kbd></button><button id="help-button">暂停 <kbd>Esc</kbd></button></nav>
+    </footer>
+    <dialog id="chart" aria-labelledby="chart-title">
+      <div class="dialog-head"><div><small>THE BLACK TIDE / NAVIGATION</small><h2 id="chart-title">航海图</h2></div><button id="chart-close" aria-label="关闭航海图">关闭 <kbd>Esc</kbd></button></div>
+      <canvas id="chart-canvas" width="880" height="590" aria-label="出生岛、码头、黑潮号、救生艇与你的实时位置"></canvas>
+      <div class="chart-foot"><span>当前位置 <strong id="chart-position"></strong></span><span id="chart-status"></span></div>
+    </dialog>
+    <dialog id="help" aria-labelledby="help-title">
+      <div class="dialog-head"><div><small>WELCOME ABOARD, CAPTAIN</small><h2 id="help-title">航行暂停</h2></div><button id="help-close" aria-label="关闭操作说明并继续游戏">继续航行</button></div>
+      <div class="help-content">
+        <p>黑潮号停在出生岛旁。你是船长，三名水手待命。按 B 点选船模，可派水手收放锚、整理指定帆或到瞭望塔站岗；撤回后他们会回舱休息。</p>
+        <dl><dt>观察与走路</dt><dd>点击开始后鼠标直接转头，WASD 按观察方向移动，Ctrl 奔跑，Shift 潜行，空格跳跃。Esc 暂停并释放鼠标。</dd><dt>亲手操作</dt><dd>用准星瞄准门把手、舱盖拉环、梯级或制动杆，再按左键。够不到时靠近或蹲下；墙、门和炮架会挡住操作。</dd><dt>梯子与索梯</dt><dd>靠近真实梯级，左键抓住。W 向上，S 向下，停下时保持抓握；端点继续前进可跨出，空格主动跳离。水手舱和货舱梯从甲板抓入时先按 Shift 蹲下。</dd><dt>背包与手持物</dt><dd>E 开关背包。1–9 或滚轮换物，X 收起／拿出，Q 丢出普通物品。背包左键拿起／放下，右键分组或放一件，Shift+左键快速存取。望远镜和提灯的右键操作分别是瞭望与开关灯。</dd><dt>船务</dt><dd>先左键压下制动杆，再按住绞车推杆收锚，松开停止。船尾左键握舵，W/S 推进、A/D 转舵，左键松手。M 看海图。门打开后直接走进去。</dd><dt>小艇与返船</dt><dd>左舷吊艇架先解索、再下放。艇浮起后沿吊索下艇，或从水中抓住艇沿登艇；W/S 划桨、A/D 转向。海中空格上浮、Shift 下潜，靠近船侧梯或码头梯再左键抓入。</dd></dl>
+        <div class="settings"><label>鼠标灵敏度 <input id="sensitivity" type="range" min="0.001" max="0.006" step="0.0002" value="0.0028"></label><label>视野 <input id="fov-setting" type="range" min="55" max="80" value="62"></label><label><input id="motion-setting" type="checkbox" checked> 轻微步行镜头摆动</label><p id="save-status"></p></div>
+        <button id="restart">重新开始，从黑潮号甲板出生</button>
+      </div>
+    </dialog>
+    <dialog id="inventory" aria-labelledby="inventory-title"><div class="dialog-head"><div><small>CAPTAIN'S BELONGINGS</small><h2 id="inventory-title">船长背包</h2></div><button id="inventory-close">返回航行 <kbd>E</kbd></button></div><div class="inventory-content"><section id="container-panel" hidden><h3 id="container-title">储物箱</h3><div id="container-slots" class="slot-grid"></div></section><h3>随身物品</h3><div id="bag-slots" class="slot-grid"></div><h3>快捷栏</h3><div id="bag-hotbar" class="slot-grid"></div><p id="cursor-item" role="status">左键拿取 / 放下 · 右键分组 · Shift+左键快速转移</p><p class="inventory-hint">物品会保存在本机。关闭面板后点击继续航行。</p></div></dialog>
+    <dialog id="crew-panel" aria-labelledby="crew-title"><div class="dialog-head"><div><small>CAPTAIN'S ORDERS</small><h2 id="crew-title">船长船务台</h2></div><button id="crew-close">返回甲板 <kbd>B</kbd></button></div><div class="crew-command-layout"><div><div id="crew-model" aria-label="拖动旋转船模，点击数字帆、船锚或瞭望塔"><div id="crew-labels"></div></div><p class="crew-model-hint">拖动旋转 · 滚轮缩放 · 点击船上的标记下令</p></div><section class="crew-orders"><label>操作目标<select id="crew-target"></select></label><label>执行水手<select id="crew-select"><option value="auto">自动安排空闲水手</option></select></label><h3 id="crew-target-title">船锚</h3><p id="crew-target-status"></p><p id="crew-notice" role="status" aria-live="polite"></p><div class="crew-actions"><button id="crew-primary">命令收锚</button><button id="crew-secondary">命令抛锚</button></div><h3>水手状态</h3><ul id="crew-roster"></ul><button id="crew-rest">撤销任务，返回舱内休息</button><button id="crew-voice">语音下令</button><p class="crew-model-hint">例如“收起船锚”“收起第三面帆”“去第二座瞭望塔站岗”。语音由浏览器提供，点击后需要麦克风授权。</p></section></div></dialog>
+    <script type="module">
+      import('./main.js').catch((error) => {
+        const notice = document.querySelector('#loading');
+        notice.classList.add('error');
+        notice.textContent = '场景加载失败。请通过本地服务打开，并确认浏览器支持 WebGL。';
+        console.error(error);
+      });
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,33 @@
+PASS visible sailors, independent uniforms, captain collision and external mechanisms
+PASS anchor: actual lower cabin, hatch climb, deck walk, heave and return
+PASS obstruction waits and resumes; anchor recall stops heaving immediately
+PASS sail 1: fore-course, continuous route and return
+PASS sail 2: fore-topsail, continuous route and return
+PASS sail 3: fore-topgallant, continuous route and return
+PASS sail 4: main-course, continuous route and return
+PASS sail 5: main-topsail, continuous route and return
+PASS sail 6: main-topgallant, continuous route and return
+PASS sail 7: mizzen-topsail, continuous route and return
+PASS sail 8: mizzen-lateen, continuous route and return
+PASS sail 9: bowsprit-spritsail, continuous route and return
+PASS sail 10: fore-upper-staysail, continuous route and return
+PASS sail 11: jib, continuous route and return
+PASS sail: all eleven actual sails, one changed per command, descent and return
+PASS guard: persistent station, ship rotation, cancellation and continuous descent
+PASS guard mast 1: real ascent, persistent station and return
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: crew timed out: [{"id":"crew-0","name":"林恩","status":"rest","label":"舱内休息","task":null,"position":[-4.851908542598281,0.1619999687671845,0.2805376893794356],"worldPosition":[11.469782999209862,0.1919999687671845,11.340252359962165],"yaw":0.5840356134342453,"climb":null,"distanceWalked":349.46689117046003,"blockedReason":""},{"id":"crew-1","name":"阿洛","status":"rest","label":"舱内休息","task":null,"position":[-3.049990588315026,0.16199999594691142,0.274111499655582],"worldPosition":[12.843826003589406,0.19199999594691142,10.174509921857437],"yaw":0.8308955193183115,"climb":null,"distanceWalked":236.306955560355,"blockedReason":""},{"id":"crew-2","name":"米娅","status":"blocked","label":"等待通道畅通","task":{"type":"guard","mast":2},"position":[-7.958017764568272,4.380964953069985,1.3980814692912302],"worldPosition":[9.814041097215457,4.4109649530699855,14.196007488261248],"yaw":-0.8680238195038893,"climb":null,"distanceWalked":177.54879682105292,"blockedReason":"通道有障碍"}]
+    at until (file:///D:/%E7%82%B9%E5%AD%90/3d/crew-check.mjs:19:105)
+    at file:///D:/%E7%82%B9%E5%AD%90/3d/crew-check.mjs:75:82 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: undefined,
+  expected: undefined,
+  operator: 'fail',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

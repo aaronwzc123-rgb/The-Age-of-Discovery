@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#15262a">
+  <title>黑潮号 · 船模展览</title><link rel="icon" href="data:,">
+  <script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+  <style>
+    *{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden;background:#213c46;color:#ebe3cf}body{font:14px "Microsoft YaHei",sans-serif}canvas{display:block;width:100%;height:100%;touch-action:none}header{position:absolute;left:max(30px,env(safe-area-inset-left));top:max(28px,env(safe-area-inset-top));pointer-events:none;text-shadow:0 2px 12px #13262b}small{font:11px Georgia,serif;letter-spacing:.28em;color:#d6bc87}h1{font:40px "STSong","SimSun",serif;letter-spacing:.18em;font-weight:400;margin:10px 0}header p{color:#d5d5c7;line-height:1.8;margin:0}.back{position:absolute;right:30px;top:30px;color:#ead7ac;text-decoration:none;border-bottom:1px solid #b99b6155;padding:10px}footer{position:absolute;bottom:max(25px,env(safe-area-inset-bottom));left:30px;right:30px;display:flex;align-items:end;justify-content:space-between;gap:20px}.caption{border-left:2px solid #b59e68;padding-left:14px;text-shadow:0 1px 6px #10222c;max-width:320px}.caption strong{font-family:"SimSun",serif;font-size:18px;font-weight:400}.caption p{color:#bcc9c9;font-size:12px;line-height:1.8;margin:7px 0 0}nav{display:flex;gap:7px;flex-wrap:wrap;justify-content:end;max-width:610px}button{font:12px "Microsoft YaHei",sans-serif;min-height:44px;padding:0 16px;color:#dacfb8;border:1px solid #c2a56744;background:#142a30dd;cursor:pointer;backdrop-filter:blur(8px)}button:hover,button[aria-pressed=true]{background:#c2a56c;color:#172b2d;border-color:#c2a56c}button:focus-visible,a:focus-visible{outline:2px solid #ffdda1;outline-offset:4px}#status{position:absolute;top:45%;left:20%;right:20%;text-align:center;pointer-events:none}#status:empty{display:none}@media(max-width:700px){header{left:20px;top:22px}h1{font-size:30px}.back{right:17px;top:17px;font-size:12px}header p{font-size:11px}footer{left:18px;right:18px;bottom:18px;display:block}.caption{margin-bottom:12px;max-width:260px}.caption p{font-size:11px}nav{justify-content:start;gap:5px}button{padding:0 12px;font-size:11px;min-height:44px}}
+  </style>
+</head>
+<body>
+  <header><small>THE BLACK TIDE · 1691</small><h1>黑潮号</h1><p>三桅木质海盗船<br>32 米船壳 · 十门舷炮 · 十一面帆</p></header>
+  <a class="back" href="./">登船游玩 ↗</a>
+  <main id="viewer" aria-label="黑潮号三维船模，可拖动旋转与滚轮缩放"></main><div id="status" role="status">正在装配船体与帆装…</div>
+  <footer><div class="caption"><strong id="view-title">风与盐留下的形状</strong><p id="view-description">拖动旋转，滚轮靠近。观察尖首、圆舭、三桅帆装与外挑艉台。</p></div><nav aria-label="船模观察位置"><button data-view="exterior" aria-pressed="true">全船</button><button data-view="stern">艉台</button><button data-view="deck">甲板</button><button data-view="captain">船长室</button><button data-view="lower">牢房</button><button data-view="crew">住舱</button><button data-view="galley">厨房</button><button data-view="hold">货舱</button><button data-view="boat">小艇</button><button id="sails" aria-pressed="false">展开下帆</button><button id="night" aria-pressed="false">暮色</button><button id="underwater" aria-pressed="false">看船底</button><button id="export">导出 GLB</button></nav></footer>
+  <script type="module">import('./ship-view.js').catch(e=>{document.querySelector('#status').textContent='船模未能加载，请重新打开开始游戏。';console.error(e);});</script>
+</body>
+</html>
+
